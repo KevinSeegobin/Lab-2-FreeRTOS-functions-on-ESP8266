@@ -39,7 +39,9 @@ hello_world_main.o: C:/esp/Lab2/hello_world/main/hello_world_main.c \
  C:/esp/esp8266_RTOS_SDK/components/spi_flash/include/esp_spi_flash.h \
  C:/esp/esp8266_RTOS_SDK/components/spi_flash/include/spi_flash.h \
  C:/esp/esp8266_RTOS_SDK/components/log/include/esp_log.h \
- C:/esp/esp8266_RTOS_SDK/components/log/include/esp_log_internal.h
+ C:/esp/esp8266_RTOS_SDK/components/log/include/esp_log_internal.h \
+ C:/esp/esp8266_RTOS_SDK/components/freertos/include/freertos/semphr.h \
+ C:/esp/esp8266_RTOS_SDK/components/freertos/include/freertos/queue.h
 
 C:/esp/esp8266_RTOS_SDK/components/freertos/include/freertos/FreeRTOS.h:
 
@@ -122,4 +124,8 @@ C:/esp/esp8266_RTOS_SDK/components/spi_flash/include/spi_flash.h:
 C:/esp/esp8266_RTOS_SDK/components/log/include/esp_log.h:
 
 C:/esp/esp8266_RTOS_SDK/components/log/include/esp_log_internal.h:
+
+C:/esp/esp8266_RTOS_SDK/components/freertos/include/freertos/semphr.h:
+
+C:/esp/esp8266_RTOS_SDK/components/freertos/include/freertos/queue.h:
 /c/esp/Lab2/hello_world/main/./hello_world_main.c:

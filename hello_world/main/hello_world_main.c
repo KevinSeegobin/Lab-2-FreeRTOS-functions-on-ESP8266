@@ -6,15 +6,19 @@
 #include "esp_spi_flash.h"
 #include "esp_log.h"
 #include "esp_system.h"
+#include "semphr.h"
 
 #define GPIO_OUTPUT_IO_0    2
 #define GPIO_OUTPUT_PIN_SEL  (1ULL<<GPIO_OUTPUT_IO_0)
+
+SemaphoreHandle_t xmutex = NULL;
 
 //static const char *TAGM = "main";
 //static const char *TASK3 = "Task 3";
 
 void Task1(void* arg)
 {
+    if (!xSemaphoreTake(xmutex, portMAX_DELAY)) { return; }
     TickType_t temp = pdMS_TO_TICKS(500);
     uint32_t gpio_num = (uint32_t)arg;
     for (;;)
@@ -24,11 +28,13 @@ void Task1(void* arg)
         TickType_t current = xTaskGetTickCount();
         while (xTaskGetTickCount() <= current + temp) { continue; }
         vTaskDelay(1000 / portTICK_RATE_MS);
+        xSemaphoreGive(xmutex);
     }
 }
 
 void Task2(void* arg)
 {
+    if (!xSemaphoreTake(xmutex, portMAX_DELAY)) { return; }
     TickType_t temp = pdMS_TO_TICKS(500);
     uint32_t gpio_num = (uint32_t)arg;
     for (;;)
@@ -38,12 +44,14 @@ void Task2(void* arg)
         TickType_t current = xTaskGetTickCount();
         while (xTaskGetTickCount() <= current + temp) { continue; }
         vTaskDelay(1000 / portTICK_RATE_MS);
+        xSemaphoreGive(xmutex);
     }
 
 }
 
 void Task3(void* arg)
 {
+    if (!xSemaphoreTake(xmutex, portMAX_DELAY)) { return; }
     uint32_t gpio_num = (uint32_t)arg;
 
     for (;;)
@@ -59,6 +67,7 @@ void Task3(void* arg)
             printf("LED off\n");
         }
         vTaskDelay(1000 / portTICK_RATE_MS);
+        xSemaphoreGive(xmutex);
     }
 }
 
@@ -81,8 +90,14 @@ void app_main()
     //configure GPIO with the given settings
     gpio_config(&io_conf);
 
-    xTaskCreate(Task1, "LED on", 1000, (void*)GPIO_OUTPUT_IO_0, 10, NULL);
-    xTaskCreate(Task2, "LED off", 1000, (void*)GPIO_OUTPUT_IO_0, 10, NULL);
+    while (xmutex == NULL)
+    {
+        //ESP_LOGI(TAG, "created");
+        xmutex = xSemaphoreCreateMutex();
+    }
+
+    xTaskCreate(Task1, "LED on", 1000, (void*)GPIO_OUTPUT_IO_0, 12, NULL);
+    xTaskCreate(Task2, "LED off", 1000, (void*)GPIO_OUTPUT_IO_0, 11, NULL);
     xTaskCreate(Task3, "LED notify", 1000, (void*)GPIO_OUTPUT_IO_0, 10, NULL);
 
     //int cnt = 0;
