@@ -13,51 +13,52 @@
 //static const char *TAGM = "main";
 //static const char *TASK3 = "Task 3";
 
-void Task1(void *arg)
+void Task1(void* arg)
 {
     TickType_t temp = pdMS_TO_TICKS(500);
-    uint32_t gpio_num = (uint32_t) arg;
-    for(;;)
+    uint32_t gpio_num = (uint32_t)arg;
+    for (;;)
     {
         //printf("Task1 started\n");      //internal led is active low
         gpio_set_level(gpio_num, 1);
         TickType_t current = xTaskGetTickCount();
-        while(xTaskGetTickCount() <= current + temp){continue;}
-        vTaskDelay(1000/portTICK_RATE_MS);
+        while (xTaskGetTickCount() <= current + temp) { continue; }
+        vTaskDelay(1000 / portTICK_RATE_MS);
     }
 }
 
-void Task2(void *arg)
+void Task2(void* arg)
 {
     TickType_t temp = pdMS_TO_TICKS(500);
-    uint32_t gpio_num = (uint32_t) arg;
-    for(;;)
+    uint32_t gpio_num = (uint32_t)arg;
+    for (;;)
     {
         //printf("Task2 started\n");
         gpio_set_level(gpio_num, 0);
         TickType_t current = xTaskGetTickCount();
-        while(xTaskGetTickCount() <= current + temp){continue;}
-        vTaskDelay(1000/portTICK_RATE_MS);
+        while (xTaskGetTickCount() <= current + temp) { continue; }
+        vTaskDelay(1000 / portTICK_RATE_MS);
     }
-    
+
 }
 
-void Task3(void *arg)
+void Task3(void* arg)
 {
-    uint32_t gpio_num = (uint32_t) arg;
-    
-    for(;;)
+    uint32_t gpio_num = (uint32_t)arg;
+
+    for (;;)
     {
         printf("task3 started\n");
-    
-        if(gpio_get_level(gpio_num))
+
+        if (gpio_get_level(gpio_num))
         {
             printf("LED on\n");
-        }else
+        }
+        else
         {
             printf("LED off\n");
         }
-        vTaskDelay(1000/portTICK_RATE_MS);
+        vTaskDelay(1000 / portTICK_RATE_MS);
     }
 }
 
@@ -80,18 +81,20 @@ void app_main()
     //configure GPIO with the given settings
     gpio_config(&io_conf);
 
-    xTaskCreate(Task1, "LED on", 1000, (void *)GPIO_OUTPUT_IO_0, 10, NULL);
-    xTaskCreate(Task2, "LED off", 1000, (void *)GPIO_OUTPUT_IO_0, 10, NULL);
-    xTaskCreate(Task3, "LED notify", 1000, (void *)GPIO_OUTPUT_IO_0, 10, NULL);
+    xTaskCreate(Task1, "LED on", 1000, (void*)GPIO_OUTPUT_IO_0, 10, NULL);
+    xTaskCreate(Task2, "LED off", 1000, (void*)GPIO_OUTPUT_IO_0, 10, NULL);
+    xTaskCreate(Task3, "LED notify", 1000, (void*)GPIO_OUTPUT_IO_0, 10, NULL);
 
     //int cnt = 0;
 
-    while (1) {
+    for (;;)
+    {
         //ESP_LOGI(TAG, "cnt: %d\n", cnt++);
         //vTaskDelay(1000 / portTICK_RATE_MS);
         //gpio_set_level(GPIO_OUTPUT_IO_0, cnt % 2);
         //gpio_set_level(GPIO_OUTPUT_IO_1, cnt % 2);
         //printf("IDLE");
-        continue;
+        //continue;
+        vTaskDelay(10 / portTICK_RATE_MS);
     }
 }
