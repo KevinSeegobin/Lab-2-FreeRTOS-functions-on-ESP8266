@@ -1,7 +1,4 @@
 
- ets Jan  8 2013,rst cause:2, boot mode:(1,7)
-
-
  ets Jan  8 2013,rst cause:2, boot mode:(3,7)
 
 load 0x40100000, len 7144, room 16
@@ -33,25 +30,23 @@ I (199) esp_image: segment 4: paddr=0x0002a548 vaddr=0x40100080 size=0x044bc ( 1
 I (217) boot: Loaded app from partition at offset 0x10000
 I (236) gpio: GPIO[2]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldow                                                                             n: 0| Intr:0
 LED on
-LED on
-LED on
-LED on
 LED off
-LED on
-LED on
 LED off
-LED on
-LED on
 LED off
-LED on
-LED on
 LED off
-LED on
-LED on
 LED off
-LED on
-LED on
 LED off
-LED on
-LED on
+LED off
+LED off
+LED off
+LED off
+LED off
+LED off
+LED off
+LED off
+LED off
+LED off
+LED off
+LED off
+LED off
 LED off
