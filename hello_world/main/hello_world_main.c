@@ -27,8 +27,8 @@ void Task1(void* arg)
         gpio_set_level(gpio_num, 1);
         TickType_t current = xTaskGetTickCount();
         while (xTaskGetTickCount() <= current + temp) { continue; }
-        vTaskDelay(1000 / portTICK_RATE_MS);
         xSemaphoreGive(xmutex);
+        vTaskDelay(1000 / portTICK_RATE_MS);
     }
 }
 
@@ -43,8 +43,8 @@ void Task2(void* arg)
         gpio_set_level(gpio_num, 0);
         TickType_t current = xTaskGetTickCount();
         while (xTaskGetTickCount() <= current + temp) { continue; }
-        vTaskDelay(1000 / portTICK_RATE_MS);
         xSemaphoreGive(xmutex);
+        vTaskDelay(1000 / portTICK_RATE_MS);
     }
 
 }
@@ -56,18 +56,18 @@ void Task3(void* arg)
 
     for (;;)
     {
-        printf("task3 started\n");
+        //printf("task3 started\n");
 
         if (gpio_get_level(gpio_num))
         {
-            printf("LED on\n");
+            printf("LED off\n");
         }
         else
         {
-            printf("LED off\n");
+            printf("LED on\n");
         }
-        vTaskDelay(1000 / portTICK_RATE_MS);
         xSemaphoreGive(xmutex);
+        vTaskDelay(1000 / portTICK_RATE_MS);
     }
 }
 
@@ -96,20 +96,14 @@ void app_main()
         xmutex = xSemaphoreCreateMutex();
     }
 
-    xTaskCreate(Task1, "LED on", 1000, (void*)GPIO_OUTPUT_IO_0, 12, NULL);
-    xTaskCreate(Task2, "LED off", 1000, (void*)GPIO_OUTPUT_IO_0, 11, NULL);
+    xTaskCreate(Task1, "LED off", 1000, (void*)GPIO_OUTPUT_IO_0, 10, NULL);
+    xTaskCreate(Task2, "LED on", 1000, (void*)GPIO_OUTPUT_IO_0, 10, NULL);
     xTaskCreate(Task3, "LED notify", 1000, (void*)GPIO_OUTPUT_IO_0, 10, NULL);
 
     //int cnt = 0;
 
     for (;;)
     {
-        //ESP_LOGI(TAG, "cnt: %d\n", cnt++);
-        //vTaskDelay(1000 / portTICK_RATE_MS);
-        //gpio_set_level(GPIO_OUTPUT_IO_0, cnt % 2);
-        //gpio_set_level(GPIO_OUTPUT_IO_1, cnt % 2);
-        //printf("IDLE");
-        //continue;
         vTaskDelay(10 / portTICK_RATE_MS);
     }
 }
