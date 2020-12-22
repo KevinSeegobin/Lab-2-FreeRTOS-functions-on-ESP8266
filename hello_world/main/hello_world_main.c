@@ -7,10 +7,12 @@
 #include "esp_log.h"
 #include "esp_system.h"
 #include "semphr.h"
+#include "esp_sleep.h"
 
 #define GPIO_OUTPUT_IO_0    2
 #define GPIO_OUTPUT_PIN_SEL  (1ULL<<GPIO_OUTPUT_IO_0)
 
+static char cbuffer[512];
 SemaphoreHandle_t xmutex = NULL;
 
 //static const char *TAGM = "main";
@@ -71,6 +73,13 @@ void Task3(void* arg)
     }
 }
 
+void vApplicationIdleHook(void)
+{
+    //printf("Idle\n");
+    esp_sleep_enable_timer_wakeup(1000);
+    esp_light_sleep_start();
+}
+
 void app_main()
 {
     //TaskHandle_t *task1;
@@ -104,6 +113,8 @@ void app_main()
 
     for (;;)
     {
+        vTaskGetRunTimeStats(cbuffer);
+        printf(cbuffer);
         vTaskDelay(10 / portTICK_RATE_MS);
     }
 }

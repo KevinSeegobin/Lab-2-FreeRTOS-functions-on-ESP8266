@@ -41,7 +41,9 @@ hello_world_main.o: C:/esp/Lab2/hello_world/main/hello_world_main.c \
  C:/esp/esp8266_RTOS_SDK/components/log/include/esp_log.h \
  C:/esp/esp8266_RTOS_SDK/components/log/include/esp_log_internal.h \
  C:/esp/esp8266_RTOS_SDK/components/freertos/include/freertos/semphr.h \
- C:/esp/esp8266_RTOS_SDK/components/freertos/include/freertos/queue.h
+ C:/esp/esp8266_RTOS_SDK/components/freertos/include/freertos/queue.h \
+ C:/esp/esp8266_RTOS_SDK/components/esp8266/include/esp_sleep.h \
+ C:/esp/esp8266_RTOS_SDK/components/esp8266/include/driver/gpio.h
 
 C:/esp/esp8266_RTOS_SDK/components/freertos/include/freertos/FreeRTOS.h:
 
@@ -128,4 +130,8 @@ C:/esp/esp8266_RTOS_SDK/components/log/include/esp_log_internal.h:
 C:/esp/esp8266_RTOS_SDK/components/freertos/include/freertos/semphr.h:
 
 C:/esp/esp8266_RTOS_SDK/components/freertos/include/freertos/queue.h:
+
+C:/esp/esp8266_RTOS_SDK/components/esp8266/include/esp_sleep.h:
+
+C:/esp/esp8266_RTOS_SDK/components/esp8266/include/driver/gpio.h:
 /c/esp/Lab2/hello_world/main/./hello_world_main.c:

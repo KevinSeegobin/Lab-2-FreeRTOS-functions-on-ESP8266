@@ -1,0 +1,444 @@
+
+ ets Jan  8 2013,rst cause:2, boot mode:(1,7)
+
+
+ ets Jan  8 2013,rst cause:2, boot mode:(3,7)
+
+load 0x40100000, len 7144, room 16
+tail 8
+chksum 0x80
+load 0x3ffe8408, len 24, room 0
+tail 8
+chksum 0x09
+load 0x3ffe8420, len 3336, room 0
+tail 8
+chksum 0x19
+I (46) boot: ESP-IDF v3.4-dev-363-gdda5062c-dirty 2nd stage bootloader
+I (46) boot: compile time 03:57:34
+I (47) qio_mode: Enabling default flash chip QIO
+I (55) boot: SPI Speed      : 40MHz
+I (62) boot: SPI Mode       : QIO
+I (68) boot: SPI Flash Size : 2MB
+I (74) boot: Partition Table:
+I (79) boot: ## Label            Usage          Type ST Offset   Length
+I (91) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (102) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (114) boot:  2 factory          factory app      00 00 00010000 000f0000
+I (125) boot: End of partition table
+I (132) esp_image: segment 0: paddr=0x00010010 vaddr=0x40210010 size=0x14e64 ( 8                                                                             5604) map
+I (174) esp_image: segment 1: paddr=0x00024e7c vaddr=0x40224e74 size=0x056ac ( 2                                                                             2188) map
+I (182) esp_image: segment 2: paddr=0x0002a530 vaddr=0x3ffe8000 size=0x003dc (                                                                                988) load
+I (185) esp_image: segment 3: paddr=0x0002a914 vaddr=0x40100000 size=0x00080 (                                                                                128) load
+I (199) esp_image: segment 4: paddr=0x0002a99c vaddr=0x40100080 size=0x044f4 ( 1                                                                             7652) load
+I (218) boot: Loaded app from partition at offset 0x10000
+I (237) gpio: GPIO[2]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldow                                                                             n: 0| Intr:0
+LED on
+uiT             13971           1
+IDLE            0               <1
+LED on          510112          43
+LED notify      190             <1
+LED off         501282          42
+Tmr Svc         147922          12
+uiT             19951           1
+IDLE            3779            <1
+LED notify      190             <1
+LED off         501282          42
+LED on          510112          43
+Tmr Svc         147922          12
+uiT             38465           3
+IDLE            5271            <1
+LED off         501282          41
+LED on          510112          42
+LED notify      190             <1
+Tmr Svc         147922          12
+uiT             59267           4
+IDLE            14478           1
+LED on          510112          41
+LED notify      190             <1
+LED off         501282          40
+Tmr Svc         147922          11
+uiT             72355           5
+IDLE            21396           1
+LED notify      190             <1
+LED off         501282          39
+LED on          510112          40
+Tmr Svc         147922          11
+uiT             87731           6
+IDLE            26026           2
+LED off         501282          39
+LED on          510112          40
+LED notify      190             <1
+Tmr Svc         147922          11
+uiT             105396          8
+IDLE            28367           2
+LED on          510112          39
+LED notify      190             <1
+LED off         501282          38
+Tmr Svc         147922          11
+uiT             125483          9
+IDLE            38289           2
+LED notify      190             <1
+LED off         501282          37
+LED on          510112          38
+Tmr Svc         147922          11
+uiT             137989          10
+IDLE            45788           3
+LED off         501282          37
+LED on          510112          37
+LED notify      190             <1
+Tmr Svc         147922          11
+uiT             153051          11
+IDLE            50732           3
+LED on          510112          37
+LED notify      190             <1
+LED off         501282          36
+Tmr Svc         147922          10
+uiT             170669          12
+IDLE            53120           3
+LED notify      190             <1
+LED off         501282          36
+LED on          510112          36
+Tmr Svc         147922          10
+uiT             190842          13
+IDLE            62956           4
+LED off         501282          35
+LED on          510112          36
+LED notify      190             <1
+Tmr Svc         147922          10
+uiT             203568          14
+IDLE            70236           4
+LED on          510112          35
+LED notify      190             <1
+LED off         501282          34
+Tmr Svc         147922          10
+uiT             218849          15
+IDLE            74961           5
+LED notify      190             <1
+LED off         501282          34
+LED on          510112          35
+Tmr Svc         147922          10
+uiT             236686          16
+IDLE            77130           5
+LED off         501282          34
+LED on          510112          34
+LED notify      190             <1
+Tmr Svc         147922          10
+uiT             257078          17
+IDLE            86747           5
+LED on          510112          33
+LED notify      190             <1
+LED off         501282          33
+Tmr Svc         147922          9
+uiT             269889          17
+IDLE            93942           6
+LED notify      190             <1
+LED off         501282          32
+LED on          510112          33
+Tmr Svc         147922          9
+uiT             285122          18
+IDLE            98715           6
+LED off         501282          32
+LED on          510112          33
+LED notify      190             <1
+Tmr Svc         147922          9
+uiT             302777          19
+IDLE            101066          6
+LED on          510112          32
+LED notify      190             <1
+LED off         501282          32
+Tmr Svc         147922          9
+uiT             322988          20
+IDLE            110863          6
+LED notify      190             <1
+LED off         501282          31
+LED on          510112          32
+Tmr Svc         147922          9
+uiT             335752          20
+IDLE            118105          7
+LED off         501282          31
+LED on          510112          31
+LED notify      190             <1
+Tmr Svc         147922          9
+uiT             351072          21
+IDLE            122791          7
+LED on          510112          31
+LED notify      190             <1
+LED off         501282          30
+Tmr Svc         147922          9
+uiT             368947          22
+IDLE            124922          7
+LED notify      190             <1
+LED off         501282          30
+LED on          510112          30
+Tmr Svc         147922          8
+LED on
+uiT             379328          14
+IDLE            134909          5
+LED notify      402             <1
+LED on          1019705         37
+LED off         1011476         37
+Tmr Svc         147922          5
+uiT             386162          14
+IDLE            138078          5
+LED on          1019705         37
+LED off         1011476         37
+LED notify      402             <1
+Tmr Svc         147922          5
+uiT             405821          14
+IDLE            138425          5
+LED off         1011476         37
+LED notify      402             <1
+LED on          1019705         37
+Tmr Svc         147922          5
+uiT             428303          15
+IDLE            145952          5
+LED notify      402             <1
+LED on          1019705         37
+LED off         1011476         36
+Tmr Svc         147922          5
+uiT             443604          15
+IDLE            150657          5
+LED on          1019705         36
+LED off         1011476         36
+LED notify      402             <1
+Tmr Svc         147922          5
+uiT             461728          16
+IDLE            152539          5
+LED off         1011476         36
+LED notify      402             <1
+LED on          1019705         36
+Tmr Svc         147922          5
+uiT             482674          17
+IDLE            161602          5
+LED notify      402             <1
+LED on          1019705         36
+LED off         1011476         35
+Tmr Svc         147922          5
+uiT             496440          17
+IDLE            167842          5
+LED on          1019705         35
+LED off         1011476         35
+LED notify      402             <1
+Tmr Svc         147922          5
+uiT             513028          17
+IDLE            171260          5
+LED off         1011476         35
+LED notify      402             <1
+LED on          1019705         35
+Tmr Svc         147922          5
+uiT             532439          18
+IDLE            171855          5
+LED notify      402             <1
+LED on          1019705         35
+LED off         1011476         35
+Tmr Svc         147922          5
+uiT             554672          19
+IDLE            179631          6
+LED on          1019705         34
+LED off         1011476         34
+LED notify      402             <1
+Tmr Svc         147922          5
+uiT             569725          19
+IDLE            184583          6
+LED off         1011476         34
+LED notify      402             <1
+LED on          1019705         34
+Tmr Svc         147922          5
+uiT             587601          19
+IDLE            186713          6
+LED notify      402             <1
+LED on          1019705         34
+LED off         1011476         34
+Tmr Svc         147922          5
+uiT             608300          20
+IDLE            196023          6
+LED on          1019705         34
+LED off         1011476         33
+LED notify      402             <1
+Tmr Svc         147922          4
+uiT             621818          20
+IDLE            202511          6
+LED off         1011476         33
+LED notify      402             <1
+LED on          1019705         33
+Tmr Svc         147922          4
+uiT             638159          21
+IDLE            206176          6
+LED notify      402             <1
+LED on          1019705         33
+LED off         1011476         33
+Tmr Svc         147922          4
+uiT             657322          21
+IDLE            207019          6
+LED on          1019705         33
+LED off         1011476         33
+LED notify      402             <1
+Tmr Svc         147922          4
+uiT             679308          22
+IDLE            215042          6
+LED off         1011476         32
+LED notify      402             <1
+LED on          1019705         33
+Tmr Svc         147922          4
+uiT             694113          22
+IDLE            220243          7
+LED notify      402             <1
+LED on          1019705         32
+LED off         1011476         32
+Tmr Svc         147922          4
+uiT             711741          22
+IDLE            222621          7
+LED on          1019705         32
+LED off         1011476         32
+LED notify      402             <1
+Tmr Svc         147922          4
+uiT             732191          23
+IDLE            232179          7
+LED off         1011476         32
+LED notify      402             <1
+LED on          1019705         32
+Tmr Svc         147922          4
+uiT             745462          23
+IDLE            238914          7
+LED notify      402             <1
+LED on          1019705         32
+LED off         1011476         31
+Tmr Svc         147922          4
+LED off
+LED on
+uiT             761555          18
+IDLE            242829          5
+LED notify      674             <1
+LED on          1529882         36
+LED off         1511520         36
+Tmr Svc         147922          3
+uiT             768385          18
+IDLE            245865          5
+LED on          1529882         36
+LED off         1511520         35
+LED notify      674             <1
+Tmr Svc         147922          3
+uiT             788178          18
+IDLE            246078          5
+LED off         1511520         35
+LED notify      674             <1
+LED on          1529882         36
+Tmr Svc         147922          3
+uiT             810793          19
+IDLE            253471          5
+LED notify      674             <1
+LED on          1529882         35
+LED off         1511520         35
+Tmr Svc         147922          3
+uiT             826229          19
+IDLE            258041          6
+LED on          1529882         35
+LED off         1511520         35
+LED notify      674             <1
+Tmr Svc         147922          3
+uiT             844487          19
+IDLE            259789          6
+LED off         1511520         35
+LED notify      674             <1
+LED on          1529882         35
+Tmr Svc         147922          3
+uiT             865568          20
+IDLE            268717          6
+LED notify      674             <1
+LED on          1529882         35
+LED off         1511520         34
+Tmr Svc         147922          3
+uiT             879468          20
+IDLE            274823          6
+LED on          1529882         35
+LED off         1511520         34
+LED notify      674             <1
+Tmr Svc         147922          3
+uiT             896191          20
+IDLE            278106          6
+LED off         1511520         34
+LED notify      674             <1
+LED on          1529882         35
+Tmr Svc         147922          3
+uiT             915736          20
+IDLE            278567          6
+LED notify      674             <1
+LED on          1529882         34
+LED off         1511520         34
+Tmr Svc         147922          3
+uiT             938104          21
+IDLE            286208          6
+LED on          1529882         34
+LED off         1511520         34
+LED notify      674             <1
+Tmr Svc         147922          3
+uiT             953291          21
+IDLE            291027          6
+LED off         1511520         34
+LED notify      674             <1
+LED on          1529882         34
+Tmr Svc         147922          3
+uiT             971301          21
+IDLE            293023          6
+LED notify      674             <1
+LED on          1529882         34
+LED off         1511520         33
+Tmr Svc         147922          3
+uiT             992133          22
+IDLE            302199          6
+LED on          1529882         34
+LED off         1511520         33
+LED notify      674             <1
+Tmr Svc         147922          3
+uiT             1005786         22
+IDLE            308552          6
+LED off         1511520         33
+LED notify      674             <1
+LED on          1529882         33
+Tmr Svc         147922          3
+uiT             1022394         22
+IDLE            311950          6
+LED notify      674             <1
+LED on          1529882         33
+LED off         1511520         33
+Tmr Svc         147922          3
+uiT             1041959         22
+IDLE            312391          6
+LED on          1529882         33
+LED off         1511520         33
+LED notify      674             <1
+Tmr Svc         147922          3
+uiT             1064480         23
+IDLE            319879          6
+LED off         1511520         33
+LED notify      674             <1
+LED on          1529882         33
+Tmr Svc         147922          3
+uiT             1079954         23
+IDLE            324411          7
+LED notify      674             <1
+LED on          1529882         33
+LED off         1511520         32
+Tmr Svc         147922          3
+uiT             1098384         23
+IDLE            325987          7
+LED on          1529882         33
+LED off         1511520         32
+LED notify      674             <1
+Tmr Svc         147922          3
+uiT             1119770         24
+IDLE            334610          7
+LED off         1511520         32
+LED notify      674             <1
+LED on          1529882         32
+Tmr Svc         147922          3
+uiT             1134109         24
+IDLE            340277          7
+LED notify      674             <1
+LED on          1529882         32
+LED off         1511520         32
+Tmr Svc         147922          3
+uiT             1151404         24
+IDLE            342987          7
+LED on          1529882         32
+LED off
