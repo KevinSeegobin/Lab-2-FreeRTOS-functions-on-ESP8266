@@ -96,9 +96,9 @@ void app_main()
         xmutex = xSemaphoreCreateMutex();
     }
 
-    xTaskCreate(Task3, "LED notify", 1000, (void*)GPIO_OUTPUT_IO_0, 10, NULL);
-    xTaskCreate(Task2, "LED on", 1000, (void*)GPIO_OUTPUT_IO_0, 10, NULL);
-    xTaskCreate(Task1, "LED off", 1000, (void*)GPIO_OUTPUT_IO_0, 10, NULL);
+    xTaskCreate(Task3, "LED notify", 1000, (void*)GPIO_OUTPUT_IO_0, 11, NULL);
+    xTaskCreate(Task2, "LED on", 1000, (void*)GPIO_OUTPUT_IO_0, 12, NULL);
+    xTaskCreate(Task1, "LED off", 1000, (void*)GPIO_OUTPUT_IO_0, 13, NULL);
 
     //int cnt = 0;
 
